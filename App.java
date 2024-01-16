@@ -3,7 +3,9 @@
  */
 public class App {
     public static void main(String[] args) {
-        alumno student1 = new alumno("Lucas", 19, "UO908978");
-        System.out.println(student1);
+        Student student1 = new Student("Lucas", 18, "UO111111");
+        Student student2 = new Student();
+        Student student3 = new Student(student2);
+        System.out.println(student1 + " " + student3);
     }
 }
