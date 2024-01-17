@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.swing.border.StrokeBorder;
+
 
 /*
  * Collection that stores elements in a linked-list. No repeated elements are allowed. They dont have to be ordered. List could be modified
@@ -49,14 +51,21 @@ public class Register<T> extends AbstractCollection<T>{
 
     @Override
     public Iterator<T> iterator() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'iterator'");
+        return this.data.iterator();
     }
 
     @Override
     public int size() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'size'");
+        return this.data.size();
+    }
+
+    @Override
+    public String toString(){
+        String list = new String();
+        for(T element : this.data){
+            list = list + element.toString() + "\n";
+        }
+        return list;
     }
 
     
