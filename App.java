@@ -8,10 +8,13 @@ public class App {
         Student student3 = new Student(student2);
         //System.out.println(student1 + " " + student3);
 
-        Register<Student> school1 = new Register<>();
-        school1.add(student1); school1.add(student2);
-        school1.add(student3);
-        System.out.println(school1);
+        Register<Student> register = new Register<>();
+        register.add(student1); register.add(student2);
+        register.add(student3);
+        System.out.println(register);
 
+        School IESCarreñoMiranda = new School(register,"IES Carreño Miranda");
+        System.out.println(IESCarreñoMiranda);
+        
     }
 }

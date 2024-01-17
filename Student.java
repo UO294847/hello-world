@@ -118,7 +118,7 @@ public class Student {
      */
     @Override
     public String toString(){
-        return String.format("Student:\n\t- Name: %s\n\t- Age: %d\n\t- ID: %s\n",getName(),getAge(),getID());
+        return String.format("- Name: %s\n\t- Age: %d\n\t- ID: %s\n",getName(),getAge(),getID());
     }
 
 }

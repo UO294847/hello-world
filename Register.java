@@ -4,8 +4,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.swing.border.StrokeBorder;
-
 
 /*
  * Collection that stores elements in a linked-list. No repeated elements are allowed. They dont have to be ordered. List could be modified
@@ -16,16 +14,24 @@ public class Register<T> extends AbstractCollection<T>{
      * DATA AREA
      */
     
-     List<T> data;
+    private List<T> data;
 
     /**
      * CONSTRUCTORS
      */
     
+    /**
+     * Creates a Linked-List were the elements of the register are stored
+     */
     public Register(){
         this.data = new LinkedList<>();    
     }
 
+    /**
+     * Uses another collection that follows the type T and we add each element to the register
+     * There cannot be any repeated elements
+     * @param c -> The copy collection
+     */
     public Register(Collection<? extends T> c){
         this();
         for(T element : c){
@@ -39,12 +45,18 @@ public class Register<T> extends AbstractCollection<T>{
 
     @Override
     public boolean add(T e){
-        if(this.data.contains(e)){
-            return false;
-        }
-        else{
+        if(this.data.isEmpty()){
             this.data.add(e);
             return true;
+        }
+        else{
+            if(this.data.contains(e)){
+                return false;
+            }
+            else{
+                this.data.add(e);
+                return true;
+            }
         }
     }
 
